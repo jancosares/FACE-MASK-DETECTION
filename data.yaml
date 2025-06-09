@@ -1,0 +1,5 @@
+train: "C:/Users/Janine/Desktop/3RD YR - 2ND SEM/CSC 126/FINAL PROJECT/dataset/images/train"
+val: "C:/Users/Janine/Desktop/3RD YR - 2ND SEM/CSC 126/FINAL PROJECT/dataset/images/val"
+
+nc: 3
+names: ['with_mask', 'without_mask', 'mask_weared_incorrect']
