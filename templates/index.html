@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html>
-<head><title>Mask Detection</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Mask Detection</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0f172a; /* dark slate/blue tone */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #38bdf8; /* sky blue */
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #1e293b; /* slightly lighter dark blue */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        input[type="submit"] {
+            background-color: #38bdf8;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0ea5e9;
+        }
+
+        .result {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .result img {
+            margin-top: 10px;
+            max-width: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
 <body>
-    <h1>Upload an Image</h1>
+    <h1>Face Mask Detection</h1>
     <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="image">
+        <input type="file" name="image" accept="image/*" required>
         <input type="submit" value="Detect">
     </form>
+
     {% if image_path %}
-        <h2>Detection Result:</h2>
-        <img src="{{ image_path }}" width="500">
+        <div class="result">
+            <h2>Detection Result:</h2>
+            <img src="{{ image_path }}" alt="Detection Result">
+        </div>
     {% endif %}
 </body>
 </html>
